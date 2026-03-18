@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: autoloop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: autoloop
+  template:
+    metadata:
+      labels:
+        app: autoloop
+    spec:
+      containers:
+        - name: autoloop
+          image: autoloop:local
+          args: ["--config", "/srv/autoloop/config/autoloop.prod.toml"]
+          env:
+            - name: RUST_LOG
+              value: info
+            - name: FIRECRAWL_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: autoloop-research-secrets
+                  key: firecrawl_api_key
+            - name: OPENAI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: autoloop-research-secrets
+                  key: openai_api_key
+            - name: BROWSERLESS_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: autoloop-research-secrets
+                  key: browserless_token
+            - name: PROXY_PROVIDER_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: autoloop-research-secrets
+                  key: proxy_provider_api_key
+          ports:
+            - name: http
+              containerPort: 3000
+          volumeMounts:
+            - name: config
+              mountPath: /srv/autoloop/config
+              readOnly: true
+      volumes:
+        - name: config
+          configMap:
+            name: autoloop-config
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: autoloop
+  labels:
+    app: autoloop
+spec:
+  selector:
+    app: autoloop
+  ports:
+    - name: http
+      port: 3000
+      targetPort: http

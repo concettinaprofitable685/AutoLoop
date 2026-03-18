@@ -1,0 +1,51 @@
+groups:
+  - name: autoloop-runtime
+    rules:
+      - alert: AutoLoopVerifierRegression
+        expr: autoloop_verifier_score < 0.65
+        for: 10m
+        labels:
+          severity: warning
+        annotations:
+          summary: "AutoLoop verifier score regressed"
+          description: "Verifier score stayed below 0.65 for 10 minutes."
+      - alert: AutoLoopProxyPressure
+        expr: autoloop_proxy_open_circuit_total > 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "AutoLoop proxy pool under pressure"
+          description: "One or more proxies entered open-circuit state."
+      - alert: AutoLoopCapabilityHealthDrop
+        expr: autoloop_capability_health_score < 0.4
+        for: 15m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Capability health score degraded"
+          description: "A governed capability dropped below the execution health floor."
+      - alert: AutoLoopResearchBackendUnavailable
+        expr: autoloop_research_health_status == 0
+        for: 5m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Research backend unavailable"
+          description: "The active browser or scrape backend is unhealthy."
+      - alert: AutoLoopProxyQuotaExhausted
+        expr: autoloop_proxy_available_total < 1
+        for: 10m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Proxy pool exhausted"
+          description: "No healthy proxies are left for autonomous web research."
+      - alert: AutoLoopRouteQualityDrop
+        expr: autoloop_route_correctness_score < 0.7
+        for: 15m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Route quality degraded"
+          description: "Execution routing correctness stayed below the expected floor."

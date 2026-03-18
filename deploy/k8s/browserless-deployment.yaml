@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: browserless
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: browserless
+  template:
+    metadata:
+      labels:
+        app: browserless
+    spec:
+      containers:
+        - name: browserless
+          image: ghcr.io/browserless/chromium:latest
+          env:
+            - name: TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: browserless-secret
+                  key: token
+            - name: CONCURRENT
+              value: "4"
+            - name: TIMEOUT
+              value: "30000"
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: browserless
+spec:
+  selector:
+    app: browserless
+  ports:
+    - port: 3000
+      targetPort: 3000

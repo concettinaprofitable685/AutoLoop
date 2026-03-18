@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: autoloop-playwright-worker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: autoloop-playwright-worker
+  template:
+    metadata:
+      labels:
+        app: autoloop-playwright-worker
+    spec:
+      containers:
+        - name: playwright-worker
+          image: mcr.microsoft.com/playwright:v1.52.0-noble
+          command: ["sleep", "infinity"]
+          env:
+            - name: NODE_ENV
+              value: production

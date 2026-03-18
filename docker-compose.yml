@@ -1,0 +1,55 @@
+version: "3.9"
+
+services:
+  autoloop:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: autoloop:local
+    environment:
+      RUST_LOG: info
+      AUTOLOOP_CONFIG: /srv/autoloop/config/autoloop.prod.toml
+    volumes:
+      - ./deploy/config:/srv/autoloop/config:ro
+      - ./deploy/backup:/srv/autoloop/backup
+    ports:
+      - "3000:3000"
+    depends_on:
+      - spacetimedb
+      - browserless
+      - prometheus
+      - alertmanager
+
+  spacetimedb:
+    image: clockworklabs/spacetimedb:latest
+    command: start --listen-addr 0.0.0.0:3000
+    ports:
+      - "3001:3000"
+
+  browserless:
+    image: ghcr.io/browserless/chromium:latest
+    environment:
+      TOKEN: local-browserless-token
+      CONCURRENT: 4
+      TIMEOUT: 30000
+    ports:
+      - "3002:3000"
+
+  prometheus:
+    image: prom/prometheus:latest
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yml"
+    volumes:
+      - ./deploy/monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - ./deploy/monitoring/prometheus-rules.yaml:/etc/prometheus/prometheus-rules.yaml:ro
+    ports:
+      - "9090:9090"
+
+  alertmanager:
+    image: prom/alertmanager:latest
+    command:
+      - "--config.file=/etc/alertmanager/alertmanager.yml"
+    volumes:
+      - ./deploy/monitoring/alertmanager-config.yaml:/etc/alertmanager/alertmanager.yml:ro
+    ports:
+      - "9093:9093"

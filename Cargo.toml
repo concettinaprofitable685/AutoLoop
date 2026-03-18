@@ -1,0 +1,25 @@
+[workspace]
+members = ["autoloop-spacetimedb-adapter", "spacetimedb"]
+
+[package]
+name = "autoloop"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+description = "AutoLoop modular runtime skeleton"
+
+[dependencies]
+anyhow = "1"
+async-trait = "0.1"
+clap = { version = "4", features = ["derive"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+autoloop-spacetimedb-adapter = { path = "autoloop-spacetimedb-adapter" }
+spacetimedb-sdk = "2.0.5"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "sync", "process", "time", "net", "io-util"] }
+toml = "0.8"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+hnsw_rs = "0.3"
+parking_lot = "0.12"
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls"] }

@@ -1,0 +1,18 @@
+route:
+  receiver: autoloop-default
+  group_by: ["alertname", "severity"]
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 4h
+  routes:
+    - matchers:
+        - severity="critical"
+      receiver: autoloop-critical
+      continue: true
+receivers:
+  - name: autoloop-default
+    webhook_configs:
+      - url: http://autoloop-alert-webhook.default.svc.cluster.local/notify
+  - name: autoloop-critical
+    webhook_configs:
+      - url: http://autoloop-alert-webhook.default.svc.cluster.local/critical

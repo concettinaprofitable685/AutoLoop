@@ -1,0 +1,113 @@
+[app]
+name = "autoloop-dev"
+workspace_root = "."
+
+[agent]
+max_iterations = 12
+memory_window = 100
+system_prompt = "You are AutoLoop development runtime."
+
+[runtime]
+max_parallel_agents = 4
+max_memory_mb = 512
+mcp_enabled = true
+allow_network_tools = false
+tool_breaker_failure_threshold = 3
+tool_breaker_cooldown_ms = 180000
+mcp_breaker_failure_threshold = 2
+mcp_breaker_cooldown_ms = 300000
+
+[security]
+profile = "minimal-ironclaw"
+require_approval_for_exec = true
+ironclaw_compatible_rules = true
+
+[memory]
+load_identity = true
+load_memory_md = true
+load_history_md = false
+
+[learning]
+enabled = true
+sidecar_enabled = true
+index_kind = "flat"
+embedding_dimensions = 128
+top_k = 4
+gray_routing_ratio = 0.2
+routing_takeover_threshold = 2.0
+hot_window_days = 14
+cold_quantization = "scalar"
+
+[research]
+enabled = true
+backend = "auto"
+live_fetch_enabled = false
+max_queries_per_anchor = 3
+max_candidates_per_query = 4
+prefer_official_sources = true
+prefer_dynamic_render = true
+browser_render_url = "http://browserless:3000/content"
+browser_session_pool = ["dev-browser-a", "dev-browser-b"]
+proxy_provider_name = "dev-static-pool"
+proxy_pool = []
+anti_bot_profile = "balanced-stealth"
+rotate_proxy_per_request = true
+proxy_request_quota_per_proxy = 12
+proxy_breaker_failure_threshold = 3
+proxy_breaker_cooldown_ms = 300000
+playwright_node_binary = "node"
+playwright_launch_timeout_secs = 25
+firecrawl_api_url = "https://api.firecrawl.dev"
+firecrawl_api_key_env = "FIRECRAWL_API_KEY"
+self_hosted_scraper_url = ""
+request_timeout_secs = 20
+retry_attempts = 2
+stability_backoff_ms = 350
+user_agent = "autoloop-dev/0.1"
+
+[rag]
+enable_graph_rag = true
+enable_first_principles_extraction = true
+
+[providers]
+builtin = ["openai-compatible"]
+default_model = "qwen-plus-latest"
+screening_model = "qwen-plus-latest"
+reasoning_model = "qwen-plus-latest"
+judge_model = "qwen-max-latest"
+enable_tiered_routing = true
+prompt_cache_capacity = 256
+api_base_url = "https://dashscope.aliyuncs.com/compatible-mode/v1"
+api_key_env = "OPENAI_API_KEY"
+request_timeout_secs = 60
+mcp_servers = ["local-mcp"]
+
+[tools]
+builtin = ["read_file", "write_file", "web_fetch"]
+allow_shell = false
+mcp_servers = ["local-mcp"]
+
+[hooks]
+builtin = ["self-learn"]
+learning_hooks_enabled = true
+
+[observability]
+enabled = true
+route_analytics_enabled = true
+failure_forensics_enabled = true
+dashboard_enabled = true
+report_top_k = 8
+
+[deployment]
+profile = "development"
+enable_container_assets = true
+config_dir = "deploy/config"
+backup_dir = "deploy/backup"
+
+[spacetimedb]
+enabled = true
+backend = "in_memory"
+uri = "http://spacetimedb:3000"
+module_name = "autoloop_core"
+namespace = "autoloop"
+pool_size = 8

@@ -1,0 +1,18 @@
+:root {
+  --bg: #050816;
+  --bg-secondary: #091126;
+  --panel: rgba(8, 16, 36, 0.84);
+  --panel-strong: rgba(14, 27, 58, 0.92);
+  --ink: #e5f0ff;
+  --muted: #88a1c5;
+  --line: rgba(76, 130, 255, 0.18);
+  --accent: #4cc9f0;
+  --accent-soft: rgba(76, 201, 240, 0.12);
+  --accent-strong: #38bdf8;
+  --good: #2dd4bf;
+  --warn: #f59e0b;
+  --bad: #fb7185;
+  --shadow: 0 20px 60px rgba(1, 6, 20, 0.45);
+  --glow: 0 0 0 1px rgba(76, 201, 240, 0.12), 0 0 24px rgba(76, 201, 240, 0.08);
+  --radius: 18px;
+}

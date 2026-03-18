@@ -1,0 +1,82 @@
+.app-shell {
+  min-height: 100vh;
+  padding: 20px;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(56, 189, 248, 0.12), transparent 24rem),
+    radial-gradient(circle at 90% 20%, rgba(45, 212, 191, 0.08), transparent 28rem),
+    radial-gradient(circle at 50% 100%, rgba(59, 130, 246, 0.08), transparent 32rem),
+    linear-gradient(180deg, var(--bg), var(--bg-secondary));
+}
+
+.app-layout {
+  display: grid;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 16px;
+  padding: 18px 22px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(7, 15, 34, 0.95), rgba(11, 22, 48, 0.88));
+  box-shadow: var(--shadow), var(--glow);
+}
+
+.header-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.header-select select {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(9, 17, 38, 0.96);
+  color: var(--ink);
+  padding: 8px 12px;
+}
+
+.control-plane-page {
+  display: grid;
+  gap: 16px;
+}
+
+.control-plane-grid {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr) 360px;
+  gap: 16px;
+  align-items: start;
+}
+
+.runtime-sidebar,
+.detail-workbench {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+}
+
+.summary-strip {
+  display: grid;
+  gap: 12px;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+}
+
+@media (max-width: 1200px) {
+  .control-plane-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
