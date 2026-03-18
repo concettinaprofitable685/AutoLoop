@@ -1,0 +1,23 @@
+# Rust
+/target
+**/*.rs.bk
+
+# Frontend
+/dashboard-ui/node_modules
+/dashboard-ui/dist
+/dashboard-ui/.vite
+
+# Runtime artifacts and logs
+/deploy/runtime
+*.log
+
+# Local secrets / env
+.env
+.env.*
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
