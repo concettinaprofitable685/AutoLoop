@@ -94,52 +94,25 @@ cargo run --manifest-path .\Cargo.toml -- crawl status --anchor-id cli:focus
 ## Planning and Learning Governance Flow
 
 ```text
-┌───────────────────────────────────────────────────────────────────────┐
-│                  AutoLoop: Planning & Learning Governance            │
-└───────────────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────┐
+│              AutoLoop Core Loop              │
+└──────────────────────────────────────────────┘
 
-[User Intent]
-     |
-     v
-[Requirement Clarification Agent]
-     |
-     v
-[Policy & Rule Engine] --reject/revise--> [Clarification]
-     | approve
-     v
-[Orchestrator / Planner-Critic-Judge]
-     |
-     v
-[Capability Catalog Selector]
-(only active + verified + trusted)
-     |
-     v
-[Runtime Kernel Guard]
-(identity/tenant + budget/token + timeout + sandbox + breaker)
-     | pass                               | block/fail
-     v                                    v
-[Execution Pools] ------------------> [Recovery/Degrade/Retry]
-     |
-     v
-[Verifier & Audit Pipeline]
-     | pass                              | reject
-     v                                   v
-[Learning Proposal Builder]          [Back to Plan]
-     |
-     v
-[Learning Gate (Verifier)]
-     | promote                           | rollback
-     v                                   v
-[Memory + GraphRAG Update]        [Keep Previous Skill]
-     |
-     v
-[Routing/Prompt/Capability Strategy Update]
-     |
-     v
-[Observability + Reports + Replay]
-     |
-     v
-[Next Iteration (Repeat)]
+User Intent
+    ↓
+Understand
+    ↓
+Plan
+    ↓
+Execute (Guarded)
+    ↓
+Verify
+    ↓
+Learn
+    ↓
+Evolve
+    ↓
+Repeat ↺
 ```
 
 ## Why AutoLoop (3 Core Differentiators)
