@@ -2,6 +2,8 @@
 
 Release type: alpha (engineering prototype)
 
+![AutoLoop banner](Gemini_Generated_Image_evurkkevurkkevur.png)
+
 ## Highlights
 
 - Rust runtime with governed swarm orchestration.
