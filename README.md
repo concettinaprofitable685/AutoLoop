@@ -1,6 +1,5 @@
 # AutoLoop
 
-[![CI](https://github.com/rootkiller6788/AutoLoop/actions/workflows/ci.yml/badge.svg)](https://github.com/rootkiller6788/AutoLoop/actions/workflows/ci.yml)
 [![Tests](https://img.shields.io/badge/tests-56%20passed-brightgreen)](https://github.com/rootkiller6788/AutoLoop/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/badge/release-v0.1.0--alpha-blue)](https://github.com/rootkiller6788/AutoLoop/releases/tag/v0.1.0-alpha)
 
