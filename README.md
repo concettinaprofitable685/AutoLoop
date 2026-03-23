@@ -3,7 +3,7 @@
 [![Tests](https://img.shields.io/badge/tests-56%20passed-brightgreen)](https://github.com/rootkiller6788/AutoLoop/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/badge/release-v0.1.0--alpha-blue)](https://github.com/rootkiller6788/AutoLoop/releases/tag/v0.1.0-alpha)
 
-<img width="1407" height="768" alt="image" src="https://github.com/user-attachments/assets/978a21a0-1722-4743-a232-db5fca2e0849" />
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/32cbcd79-eabc-42d0-b947-a0dc6b5b0c85" />
 
 
 
